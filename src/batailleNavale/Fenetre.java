@@ -7,7 +7,7 @@ public class Fenetre extends JFrame {
 	
 	public Fenetre(){
 		this.setTitle("Bataille Navale");
-		this.setSize(650,650);
+		this.setSize(1600,900);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
 	}
