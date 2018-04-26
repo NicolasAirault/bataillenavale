@@ -1,5 +1,7 @@
 package batailleNavale;
 
+import java.awt.Color;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
