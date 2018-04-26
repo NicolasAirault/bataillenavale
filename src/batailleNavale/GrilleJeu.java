@@ -1,32 +1,21 @@
 package batailleNavale;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class GrilleJeu extends JPanel implements ActionListener{
-	
-	private JButton caseJeu;
+public class GrilleJeu extends JPanel {
 
+	private CaseJeu[] caseJeu;
+	private static final int NOMBRE_CASE_JEU = 100;
+	
 	public GrilleJeu(){
 		this.setLayout(new GridLayout(10,10));
-		this.caseJeu = new JButton();
-		this.caseJeu.addActionListener(this);
+		this.caseJeu = new CaseJeu[NOMBRE_CASE_JEU];
 		
-		for(int i=0 ; i < 10; i++){
-			for(int j = 0; j < 10; j++){
-				this.add(new JButton());
-			}
+		for(int i=0 ; i < NOMBRE_CASE_JEU; i++){
+			caseJeu[i] = new CaseJeu();
+			this.add(caseJeu[i]);
 		}
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		
-		
 	}
 }
