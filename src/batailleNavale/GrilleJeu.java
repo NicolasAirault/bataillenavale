@@ -1,21 +1,27 @@
 package batailleNavale;
 
 import java.awt.GridLayout;
+
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class GrilleJeu extends JPanel {
 
-	private CaseJeu[] caseJeu;
-	private static final int NOMBRE_CASE_JEU = 100;
+	public static final int NOMBRE_CASE_JEU = 10;
+	private CaseJeu[][] cases;
 	
 	public GrilleJeu(){
 		this.setLayout(new GridLayout(10,10));
-		this.caseJeu = new CaseJeu[NOMBRE_CASE_JEU];
-		
-		for(int i=0 ; i < NOMBRE_CASE_JEU; i++){
-			caseJeu[i] = new CaseJeu();
-			this.add(caseJeu[i]);
+		this.cases = new CaseJeu[NOMBRE_CASE_JEU][NOMBRE_CASE_JEU];
+		for(int i = 0; i < NOMBRE_CASE_JEU; i++){
+			for(int j = 0 ; j < NOMBRE_CASE_JEU; j++){
+				this.cases[i][j] = new CaseJeu();
+				this.add(this.cases[i][j]);
+			}
 		}
+	}
+	
+	public CaseJeu[][] getCases(){
+		return this.cases;
 	}
 }
